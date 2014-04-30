@@ -29,7 +29,6 @@ Chef::Log.info("ohai plugins will be at: #{node['ohai']['plugin_path']}")
 # This is done during the compile phase so new plugins can be used in
 # resources later in the run.
 node['ohai']['plugins'].each_pair do |source_cookbook, path|
-
   rd = remote_directory node['ohai']['plugin_path'] do
     cookbook source_cookbook
     source path
